@@ -1,0 +1,15 @@
+<paquet
+	prefix="bank_axepta"
+	categorie="outil"
+	version="0.1.0"
+	etat="stable"
+	compatibilite="[3.2.0;4.0.*]"
+	logo="prive/themes/spip/images/bank-64.png"
+>
+
+	<nom>Banque&amp;paiement - Axepta BNP Paribas</nom>
+	<!-- Un module de paiement pour Axepta BNP Paribas  -->
+
+	<auteur lien="https://www.studiomaiis.net">Pierre BASSON</auteur>
+
+</paquet>
