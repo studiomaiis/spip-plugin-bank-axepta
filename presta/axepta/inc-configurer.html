@@ -1,43 +1,41 @@
 <ul class="editer-groupe">
+	
+	<li class="editer">
+		Code à insérer dans votre .htaccess <br>
+		<code>RewriteCond %{QUERY_STRING} ^(.*)$</code><br>
+		<code>RewriteRule ^axepta/(.*)/(.*)/(.*)/$ spip.php?action=bank_$2&bankp=axepta-$1&id=$3&%1 [L]</code>
+	</li>
+	
+	#SET{name,#ENV{casier,''}_admins_seulement}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs}|table_valeur{#GET{name}}}
+	<li class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">[
+		<span class='erreur_message'>(#GET{erreurs})</span>
+		]
+		#SET{val,0}
+		<input type="hidden" name="#ENV{casier,''}[admins_seulement]" value="#GET{val}" />
+		#SET{val,1}
+		<div class="choix">
+			<input type="checkbox" name="#ENV{casier,''}[admins_seulement]" class="checkbox" id="#GET{name}_#GET{val}" value="#GET{val}"[(#ENV*{#ENV{casier,''}}|table_valeur{admins_seulement,#GET{defaut}}|=={#GET{val}}|oui)checked="checked"] />
+			<label for="#GET{name}_#GET{val}">Visible par les admins seulement</label>
+		</div>
+	</li>
 
-	#SET{name,#ENV{casier,''}_merchant_id}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs}|table_valeur{#GET{name}}}
+	#SET{name,#ENV{casier,''}_merchant_id}#SET{obli,''}#SET{defaut,'BNP_DEMO_AXEPTA'}#SET{erreurs,#ENV**{erreurs}|table_valeur{#GET{name}}}
 	<li class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
-		<label for="#GET{name}">Merchant ID (Production)</label>[
+		<label for="#GET{name}">Merchant ID</label>[
 		<span class='erreur_message'>(#GET{erreurs})</span>
 		]<input type="text" name="#ENV{casier,''}[merchant_id]" class="text" value="#ENV*{#ENV{casier,''}/merchant_id,#GET{defaut}}" id="#GET{name}" [(#HTML5|et{#GET{obli}})required='required']/>
 	</li>
-	#SET{name,#ENV{casier,''}_hmac_password}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs}|table_valeur{#GET{name}}}
+	#SET{name,#ENV{casier,''}_hmac_password}#SET{obli,''}#SET{defaut,'4n!BmF3_?9oJ2Q*z(iD7q6[RSb5)a]A8'}#SET{erreurs,#ENV**{erreurs}|table_valeur{#GET{name}}}
 	<li class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
-		<label for="#GET{name}">Mot de passe HMAC (Production)</label>[
+		<label for="#GET{name}">Mot de passe HMAC</label>[
 		<span class='erreur_message'>(#GET{erreurs})</span>
-		]<input type="text" name="#ENV{casier,''}[hmac_password]" class="text" value="#ENV*{#ENV{casier,''}/hmac_password,#GET{defaut}}" id="#GET{name}" [(#HTML5|et{#GET{obli}})required='required']/>
+		]<input type="password" name="#ENV{casier,''}[hmac_password]" class="text" value="#ENV*{#ENV{casier,''}/hmac_password,#GET{defaut}}" id="#GET{name}" [(#HTML5|et{#GET{obli}})required='required']/>
 	</li>
-	#SET{name,#ENV{casier,''}_blowfish_password}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs}|table_valeur{#GET{name}}}
+	#SET{name,#ENV{casier,''}_blowfish_password}#SET{obli,''}#SET{defaut,'Tc5*2D_xs7B[6E?w'}#SET{erreurs,#ENV**{erreurs}|table_valeur{#GET{name}}}
 	<li class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
-		<label for="#GET{name}">Mot de passe Blowfish (Production)</label>[
+		<label for="#GET{name}">Mot de passe Blowfish</label>[
 		<span class='erreur_message'>(#GET{erreurs})</span>
-		]<input type="text" name="#ENV{casier,''}[blowfish_password]" class="text" value="#ENV*{#ENV{casier,''}/blowfish_password,#GET{defaut}}" id="#GET{name}" [(#HTML5|et{#GET{obli}})required='required']/>
-	</li>
-
-	<INCLURE{fond=formulaires/inc-bank-config-mode_test,env} />
-
-	#SET{name,#ENV{casier,''}_merchant_id_test}#SET{obli,''}#SET{defaut,'BNP_DEMO_AXEPTA'}#SET{erreurs,#ENV**{erreurs}|table_valeur{#GET{name}}}
-	<li class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
-		<label for="#GET{name}">Merchant ID (Test)</label>[
-		<span class='erreur_message'>(#GET{erreurs})</span>
-		]<input type="text" name="#ENV{casier,''}[merchant_id_test]" class="text" value="#ENV*{#ENV{casier,''}/merchant_id_test,#GET{defaut}}" id="#GET{name}" [(#HTML5|et{#GET{obli}})required='required']/>
-	</li>
-	#SET{name,#ENV{casier,''}_hmac_password_test}#SET{obli,''}#SET{defaut,'4n!BmF3_?9oJ2Q*z(iD7q6[RSb5)a]A8'}#SET{erreurs,#ENV**{erreurs}|table_valeur{#GET{name}}}
-	<li class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
-		<label for="#GET{name}">Mot de passe HMAC (Test)</label>[
-		<span class='erreur_message'>(#GET{erreurs})</span>
-		]<input type="text" name="#ENV{casier,''}[hmac_password_test]" class="text" value="#ENV*{#ENV{casier,''}/hmac_password_test,#GET{defaut}}" id="#GET{name}" [(#HTML5|et{#GET{obli}})required='required']/>
-	</li>
-	#SET{name,#ENV{casier,''}_blowfish_password_test}#SET{obli,''}#SET{defaut,'Tc5*2D_xs7B[6E?w'}#SET{erreurs,#ENV**{erreurs}|table_valeur{#GET{name}}}
-	<li class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
-		<label for="#GET{name}">Mot de passe Blowfish (Test)</label>[
-		<span class='erreur_message'>(#GET{erreurs})</span>
-		]<input type="text" name="#ENV{casier,''}[blowfish_password_test]" class="text" value="#ENV*{#ENV{casier,''}/blowfish_password_test,#GET{defaut}}" id="#GET{name}" [(#HTML5|et{#GET{obli}})required='required']/>
+		]<input type="password" name="#ENV{casier,''}[blowfish_password]" class="text" value="#ENV*{#ENV{casier,''}/blowfish_password,#GET{defaut}}" id="#GET{name}" [(#HTML5|et{#GET{obli}})required='required']/>
 	</li>
 
 </ul>

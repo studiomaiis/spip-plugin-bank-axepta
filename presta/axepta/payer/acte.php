@@ -22,8 +22,13 @@ function presta_axepta_payer_acte_dist($config, $id_transaction, $transaction_ha
 	}
 
 	include_spip('inc/axepta');
+	$montrer = true;
+	if ($config['admins_seulement'] == true and @$GLOBALS['auteur_session']['statut'] != '0minirezo') {
+		$montrer = false;
+	}
 	$contexte['sandbox'] = (axepta_is_sandbox($config) ? ' ' : '');
 	$contexte['logo'] = bank_trouver_logo("axepta", "axepta.png");
+	$contexte['montrer'] = $montrer;
 	$contexte['config'] = $config;
 
 	$contexte = array_merge($options, $contexte);

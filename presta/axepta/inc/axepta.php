@@ -18,9 +18,7 @@ include_spip('presta/axepta/inc/blowfish.inc');
  */
 function axepta_is_sandbox($config){
 	$test = false;
-	// _AXEPTA_TEST force a TRUE pour utiliser l'adresse de test d'Axepta
-	if ((defined('_AXEPTA_TEST') AND _AXEPTA_TEST)
-		OR (isset($config['mode_test']) AND $config['mode_test'])){
+	if (isset($config['merchant_id']) and (preg_match('/_t$/', $config['merchant_id']) or $config['merchant_id'] == 'BNP_DEMO_AXEPTA')) {
 		$test = true;
 	}
 	return $test;
@@ -35,7 +33,6 @@ function axepta_is_sandbox($config){
  */
 function axepta_url_serveur($config){
 	$host = 'https://paymentpage.axepta.bnpparibas/payssl.aspx';
-	
 	return $host;
 }
 

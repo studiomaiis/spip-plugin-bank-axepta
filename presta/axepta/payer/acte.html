@@ -10,17 +10,20 @@
  *
  */
 ]#CACHE{0}
-<BOUCLE_trans(TRANSACTIONS){id_transaction}{transaction_hash}>
-	<div class='payer_mode payer_[(#ENV{config/presta})] payer_acte' id='paiement_#ENV{config/presta}'>
-		<h4 class="titre h4"><:bank:payer_par_carte_bancaire:></h4>
-		[<p class="explication">(#ENV{config/presta}|bank_explication_mode_paiement)</p>]
-		<div class='boutons'>
-		<form action="#ENV{action}" method="post" class="noajax">
-		[(#ENV**{hidden})]
-		[(#SET{prestaup,[(#ENV{config/presta}|strtoupper)]})]
-		[(#SET{texte,#VAL{bank:payer_par_carte_bancaire}|_T{#ARRAY{nom,#GET{prestaup}}}})]
-		<button class="submit" type="submit" title="[(#GET{texte}|attribut_html)]">[(#ENV{logo}|bank_label_bouton_img_ou_texte{#GET{texte}})]</button>
-		</form></div>
-		[(#ENV{sandbox}|oui)<div class="info"><:bank:info_mode_test{presta=#GET{prestaup}}:></div>]
-	</div>
+<BOUCLE_trans(TRANSACTIONS) {id_transaction} {transaction_hash}>
+	<BOUCLE_montrer(CONDITION) {si #ENV{montrer}}>
+		<div class='payer_mode payer_[(#ENV{config/presta})] payer_acte' id='paiement_#ENV{config/presta}'>
+			<h4 class="titre h4"><:bank:payer_par_carte_bancaire:></h4>
+			[<p class="explication">(#ENV{config/presta}|bank_explication_mode_paiement)</p>]
+			<div class='boutons'>
+				<form action="#ENV{action}" method="post" class="noajax">
+					[(#ENV**{hidden})]
+					[(#SET{prestaup,[(#ENV{config/presta}|strtoupper)]})]
+					[(#SET{texte,#VAL{bank:payer_par_carte_bancaire}|_T{#ARRAY{nom,#GET{prestaup}}}})]
+					<button class="submit" type="submit" title="[(#GET{texte}|attribut_html)]">[(#ENV{logo}|bank_label_bouton_img_ou_texte{#GET{texte}})]</button>
+				</form>
+			</div>
+			[(#ENV{sandbox}|oui)<div class="info"><:bank:info_mode_test{presta=#GET{prestaup}}:></div>]
+		</div>
+	</BOUCLE_montrer>
 </BOUCLE_trans>
