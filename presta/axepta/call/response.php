@@ -49,6 +49,9 @@ function presta_axepta_call_response_dist($config, $response = null){
 			foreach ($a as $chaine) {
 				if (preg_match('/=/', $chaine)) {
 					list($cle, $valeur) = explode('=', $chaine, 2);
+					if ($cle == 'MIB') {
+						$cle = 'mib';
+					}
 					$parametres[$cle] = $valeur;
 					if (in_array($cle, $parametres_necessaires)) {
 						$parametres_hmac[$cle] = $valeur;

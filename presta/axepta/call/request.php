@@ -69,7 +69,7 @@ function presta_axepta_call_request_dist($id_transaction, $transaction_hash, $co
 	$Amount = intval($row['montant'] * 100);
 	$Currency = $row['devise'];
 	//$Capture = 'AUTO';
-	$OrderDesc = '';
+	$OrderDesc = "Transaction $id_transaction";
 	if ($MerchantID == 'BNP_DEMO_AXEPTA') {
 		$OrderDesc = 'Test:0000';
 	}
