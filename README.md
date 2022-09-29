@@ -89,8 +89,9 @@ Si c'est un bug (pas une demande de support) :
 2. Vérifiez que votre serveur est accessible - exemple : si vous développez en local, les serveurs de la banque ne pourront pas envoyer leurs réponses à votre serveur,
 3. Regardez vos logs `tmp/logs/bank.log`, `tmp/logs/bank_response.log` et `tmp/logs/axepta.log`,
 4. Désactivez les plugins qui pourraient interférer,
-5. Contactez le support Axepta, ils peuvent avoir des informations additionnelles, surtout s'il s'agit de votre environnement de production,
-6. Soumettez un bug sur [GitHub](https://github.com/studiomaiis/spip-plugin-bank-axepta/issues).
+5. Regardez dans [section discussion de ce projet](https://github.com/studiomaiis/spip-plugin-bank-axepta/discussions) pour voir si d'autres utilisateurs n'ont pas eu/résolu le même problème,
+6. Contactez le support Axepta, ils peuvent avoir des informations additionnelles, surtout s'il s'agit de votre environnement de production,
+7. Soumettez un bug sur [GitHub](https://github.com/studiomaiis/spip-plugin-bank-axepta/issues).
 
 S'il s'agit d'une demande de support, vous pouvez m'envoyer une demande sur mon [site internet](https://www.studiomaiis.net), toute intervention fera l'objet d'un devis et d'une facture. 
 
