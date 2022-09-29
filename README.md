@@ -74,6 +74,8 @@ Les cartes de test peuvent être trouvées [ici](https://docs.axepta.bnpparibas/
 
 Non, ce plugin s'adresse plutôt à des développeurs et intégrateur qui savent récupérer ces informations. Veuillez vous référer à la [documentation officielle](https://docs.axepta.bnpparibas/display/DOCBNP/Premiers+pas+avec+AXEPTA+BNP+Paribas) ou contacter le support Axepta.
 
+Cherchez de l'aide dans la [section discussion de ce projet Github](https://github.com/studiomaiis/spip-plugin-bank-axepta/discussions).
+
 Si vraiment vous ne savez pas faire, vous pouvez m'envoyer une demande sur mon [site internet](https://www.studiomaiis.net), toute intervention fera l'objet d'un devis et d'une facture. Sachez que récupérer ces informations peut s'avérer assez chronophage.
 
 ### Comment passe-t'on en mode production ?
