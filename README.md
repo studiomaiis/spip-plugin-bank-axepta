@@ -45,6 +45,10 @@ Non, ce n'est pas nécessaire, mais c'est hautement recommandé pour ajouter un 
 
 Oui, vous pouvez ajouter plusieurs prestataires *Axepta* avec le plugin *Bank* : un pour les tests, et un pour la prod. Les valeurs par défaut correspondent à l'environnement de test générique *Axepta*, à noter que les identifiants de votre environnement de test dédié (dont le MID se termine par `_t`) ne fonctionneront pas car cet environnement ne supporte pas le 3DS2.
 
+![Ajout d'un prestataire Axepta dans l'admin de SPIP](https://depot.studiomaiis.net/screenshots/bank_axepta_ajout_presta.png "Ajout d'un prestataire Axepta dans l'admin de SPIP")
+
+![Configuration de la passerelle Axepta dans l'admin de SPIP](https://depot.studiomaiis.net/screenshots/bank_axepta_config.png "Configuration de la passerelle Axepta dans l'admin de SPIP")
+
 Pendant vos développements vous pourrez cocher la case *Visible par les admins seulement* pour éviter que d'autres personnes que les administrateurs connectés ne puissent utiliser la passerelle.
 
 Si vous avez perdu les identifiants de test générique, vous pouvez les retrouver [ici](https://docs.axepta.bnpparibas/display/DOCBNP/3DSV2+Test+environment).
