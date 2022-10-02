@@ -45,7 +45,7 @@ Non, ce n'est pas nécessaire, mais c'est hautement recommandé pour ajouter un 
 
 ### Ce plugin supporte-til les environnements de test et de production ?
 
-Oui, vous pouvez ajouter plusieurs prestataires *Axepta* avec le plugin *Bank* : un pour les tests, et un pour la prod. Les valeurs par défaut correspondent à l'environnement de test générique *Axepta*, à noter que les identifiants de votre environnement de test dédié (dont le MID se termine par `_t`) ne fonctionneront pas car cet environnement ne supporte pas le 3DS2.
+Oui, vous pouvez ajouter plusieurs prestataires *Axepta* avec le plugin *Bank* : un pour les tests, et un pour la prod. Les valeurs par défaut correspondent à l'environnement de test générique *Axepta*, à noter que les identifiants de votre environnement de test dédié (dont le MID se termine par `_t`) ne fonctionneront pas car cet environnement ne supporte pas le 3DS2 ([cf. documentation](https://docs.axepta.bnpparibas/display/DOCBNP/3DSV2+Test+environment)).
 
 Pendant vos développements vous pourrez cocher la case *Visible par les admins seulement* pour éviter que d'autres personnes que les administrateurs connectés ne puissent utiliser la passerelle.
 
@@ -68,7 +68,7 @@ Attention à ne pas utiliser les tickets Github pour des demandes de support.
 
 ### Sur l'environnement de test, où puis-je trouver les cartes de test ?
 
-Les cartes de test peuvent être trouvées [ici](https://docs.axepta.bnpparibas/display/DOCBNP/3DSV2+Test+environment).
+Les cartes de test peuvent être trouvées [ici](https://docs.axepta.bnpparibas/display/DOCBNP/Test+Cards+-+Authentication).
 
 ### Un support, une aide sont-ils proposés pour récupérer les informations MerchantId, clés HMAC et Blowfish ?
 
