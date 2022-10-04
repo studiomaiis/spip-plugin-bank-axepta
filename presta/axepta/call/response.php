@@ -73,8 +73,8 @@ function presta_axepta_call_response_dist($config, $response = null){
 		}
 		
 		$MAC = strtoupper($MAC);
-		if ($MAC != $parametres['MAC']) {
-			throw new Exception('signature MAC erronée '.$parametres_hmac['PayID'].'*'.$parametres_hmac['TransID'].'*'.$parametres_hmac['mid'].'*'.$parametres_hmac['Status'].'*'.$parametres_hmac['Code'].' '.$MAC.' ?= '.$parametres['MAC']);
+		if ($MAC != trim($parametres['MAC'])) {
+			throw new Exception('signature MAC erronée '.var_export($MAC, true).' ?= '.var_export($parametres['MAC'], true));
 		}
 
 		$id_transaction = $parametres['TransID'];

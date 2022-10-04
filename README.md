@@ -45,7 +45,7 @@ Non, ce n'est pas nécessaire, mais c'est hautement recommandé pour ajouter un 
 
 ### Ce plugin supporte-til les environnements de test et de production ?
 
-Oui, vous pouvez ajouter plusieurs prestataires *Axepta* avec le plugin *Bank* : un pour les tests, et un pour la prod. Les valeurs par défaut correspondent à l'environnement de test générique *Axepta*, à noter que les identifiants de votre environnement de test dédié (dont le MID se termine par `_t`) ne fonctionneront pas car cet environnement ne supporte pas le 3DS2 ([cf. documentation](https://docs.axepta.bnpparibas/display/DOCBNP/3DSV2+Test+environment)).
+Oui, vous pouvez ajouter plusieurs prestataires *Axepta* avec le plugin *Bank* : un pour les tests, et un pour la prod. Les valeurs par défaut correspondent à l'environnement de test générique *Axepta*, à noter que les identifiants de votre environnement de test dédié (dont le MID se termine par `_t`) ne fonctionneront pas car cet environnement ne supporte pas le 3DS2 ([cf. documentation](https://docs.axepta.bnpparibas/display/DOCBNP/Test+modes)).
 
 Pendant vos développements vous pourrez cocher la case *Visible par les admins seulement* pour éviter que d'autres personnes que les administrateurs connectés ne puissent utiliser la passerelle.
 
@@ -61,7 +61,6 @@ Si vous avez le MerchantID (ou MID dans la doc), la clé HMAC et la clé Blowfis
 
 ![Configuration de la passerelle Axepta dans l'admin de SPIP](https://depot.studiomaiis.net/screenshots/bank_axepta_config.png "Configuration de la passerelle Axepta dans l'admin de SPIP")
 
-
 Veuillez vous référer à la [documentation officielle](https://docs.axepta.bnpparibas/display/DOCBNP/Premiers+pas+avec+AXEPTA+BNP+Paribas) pour récupérer vos identifiants.
 
 Attention à ne pas utiliser les tickets Github pour des demandes de support.
@@ -72,7 +71,7 @@ Les cartes de test peuvent être trouvées [ici](https://docs.axepta.bnpparibas/
 
 ### Un support, une aide sont-ils proposés pour récupérer les informations MerchantId, clés HMAC et Blowfish ?
 
-Non, ce plugin s'adresse plutôt à des développeurs et intégrateur qui savent récupérer ces informations. Veuillez vous référer à la [documentation officielle](https://docs.axepta.bnpparibas/display/DOCBNP/Premiers+pas+avec+AXEPTA+BNP+Paribas) ou contacter le support Axepta.
+Non, ce plugin s'adresse plutôt à des développeurs et intégrateur qui savent récupérer ces informations. Veuillez vous référer à la [documentation officielle](https://docs.axepta.bnpparibas/display/DOCBNP/Premiers+pas+avec+AXEPTA+BNP+Paribas) ou contacter le support *Axepta*.
 
 Cherchez de l'aide dans la [section discussion de ce projet Github](https://github.com/studiomaiis/spip-plugin-bank-axepta/discussions).
 
